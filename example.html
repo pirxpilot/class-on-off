@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>On-Off</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        padding: 2em;
+      }
+      .hidden {
+        display: none;
+      }
+      .popup {
+        position: fixed;
+        top: 10em;
+        left: 10em;
+        width: 10em;
+        padding: 1em;
+        background-color: lightgreen;
+      }
+      .popup p {
+        line-height: 2;
+      }
+    </style>
+  </head>
+  <body class="top">
+    <a href='#' class='trigger'>Click here to open popup.</a>
+    <div class="popup hidden">
+      <p>Lobortis molestie convallis purus blandit fames mattis rutrum aenean morbi</p>
+      <a  href='#' class='close'>Close</a>
+    </div>
+    <p class="status"></p>
+    <script src="build/build.js"></script>
+    <script>
+      var oo, data;
+
+      function status() {
+        document.querySelector('.status').textContent = ['Opened:', data.open, 'Closed:', data.close].join(' ');
+      }
+
+      data = {
+        open: 0,
+        close: 0
+      };
+      oo = require('on-off')({
+        popup: '.popup',
+        trigger: '.trigger'
+      }).on('opening', function() {
+        data.open++;
+        status();
+      }).on('closing', function() {
+        data.close++;
+        status();
+      });
+
+      status();
+    </script>
+  </body>
+</html>
