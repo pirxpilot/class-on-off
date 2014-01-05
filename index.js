@@ -22,20 +22,29 @@ function onoff(selectors) {
   }
 
   function close(e) {
+    var cl = classes(my.el);
+    if (cl.has(my.className)) {
+      // alredy closed
+      return;
+    }
     if (!check('closing', e)) {
       return self;
     }
     events.unbind(document, 'click', close);
     k.unbind();
-    classes(my.el).add(my.className);
+    cl.add(my.className);
     return self;
   }
 
   function open(e) {
+    var cl = classes(my.el);
+    if (!cl.has(my.className)) {
+      return;
+    }
     if (!check('opening', e)) {
       return self;
     }
-    classes(my.el).remove(my.className);
+    cl.remove(my.className);
     events.bind(document, 'click', close);
     k.bind('esc', close);
     return self;
