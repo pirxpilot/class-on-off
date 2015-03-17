@@ -24,10 +24,16 @@
       .popup p {
         line-height: 2;
       }
+      a,
+      button,
+      .status {
+        margin: 5px;
+      }
     </style>
   </head>
   <body class="top">
     <a href='#' class='trigger'>Click here to open popup.</a>
+    <button>Open</button>
     <div class="popup hidden">
       <p>Lobortis molestie convallis purus blandit fames mattis rutrum aenean morbi</p>
       <a  href='#' class='close'>Close</a>
@@ -35,7 +41,7 @@
     <p class="status"></p>
     <script src="build/build.js"></script>
     <script>
-      var oo, data;
+      var oo, data, button;
 
       function status() {
         document.querySelector('.status').textContent = ['Opened:', data.open, 'Closed:', data.close].join(' ');
@@ -47,13 +53,21 @@
       };
       oo = require('on-off')({
         popup: '.popup',
-        trigger: '.trigger'
+        trigger: '.trigger',
+        event: 'popup-open'
       }).on('opening', function() {
         data.open++;
         status();
       }).on('closing', function() {
         data.close++;
         status();
+      });
+
+
+      button = document.querySelector('.top button');
+      button.addEventListener('click', function(e) {
+        window.dispatchEvent(new Event('popup-open'));
+        e.stopPropagation();
       });
 
       status();

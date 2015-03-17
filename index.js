@@ -57,7 +57,12 @@ function onoff(selectors) {
   }
 
   my.el = query(selectors.popup);
-  events.bind(query(selectors.trigger), 'click', opening);
+  if (selectors.trigger) {
+    events.bind(query(selectors.trigger), 'click', opening);
+  }
+  if (selectors.event) {
+    events.bind(window, selectors.event, opening);
+  }
   events.bind(query('.close', my.el), 'click', close);
 
   self.open = open;
