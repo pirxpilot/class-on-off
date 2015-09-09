@@ -2,7 +2,7 @@
   "name": "on-off",
   "repo": "code42day/on-off",
   "description": "Flips CSS class on the DOM element",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "keywords": [
     "popup"
   ],
