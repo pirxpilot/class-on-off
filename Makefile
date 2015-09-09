@@ -1,14 +1,14 @@
+build: node_modules index.js
+	mkdir build
+	browserify --require ./index.js:on-off --outfile build/build.js
 
-build: components index.js
-	@component build --dev
-
-components: component.json
-	@component install --dev
+node_modules: package.json
+	npm install
 
 lint:
-	@jshint index.js
+	jshint index.js
 
 clean:
-	rm -fr build components
+	rm -fr build node_modules
 
-.PHONY: clean lint
+.PHONY: clean lint build
