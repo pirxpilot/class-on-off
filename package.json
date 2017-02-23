@@ -1,6 +1,6 @@
 {
   "name": "class-on-off",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Flips CSS class on the DOM element",
   "main": "index.js",
   "scripts": {
