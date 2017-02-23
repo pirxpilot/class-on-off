@@ -1,5 +1,5 @@
 {
-  "name": "code42day-on-off",
+  "name": "class-on-off",
   "version": "0.3.1",
   "description": "Flips CSS class on the DOM element",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/code42day/load.git"
+    "url": "https://github.com/pirxpilot/class-on-off.git"
   },
   "dependencies": {
     "component-classes": "^1.1.4",
@@ -27,10 +27,7 @@
   "keywords": [
     "browser"
   ],
-  "author": "Damian Krzeminski <pirxpilot@code42day.com>",
+  "author": "Damian Krzeminski <pirxpilot@furkot.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/code42day/on-off/issues"
-  },
-  "homepage": "https://github.com/code42day/on-off"
+  "homepage": "https://github.com/pirxpilot/class-on-off"
 }

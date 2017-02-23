@@ -5,9 +5,9 @@
 
 ## Installation
 
-  Install with [component(1)](http://component.io):
+Install with [npm]:
 
-    $ component install code42day/on-off
+    $ npm install class-on-off
 
 ## API
 
@@ -16,3 +16,5 @@
 ## License
 
   MIT
+
+[npm]: https://www.npmjs.org/
