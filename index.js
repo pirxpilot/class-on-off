@@ -1,5 +1,4 @@
 var events = require('event');
-var query = require('query');
 var emitter = require('emitter');
 var k = require('k')(window);
 
@@ -55,14 +54,14 @@ function onoff(selectors) {
     open(e);
   }
 
-  my.el = query(selectors.popup);
+  my.el = document.querySelector(selectors.popup);
   if (selectors.trigger) {
-    events.bind(query(selectors.trigger), 'click', opening);
+    events.bind(document.querySelector(selectors.trigger), 'click', opening);
   }
   if (selectors.event) {
     events.bind(window, selectors.event, opening);
   }
-  events.bind(query('.close', my.el), 'click', close);
+  events.bind(my.el.querySelector('.close'), 'click', close);
 
   self.open = open;
   self.close = close;
