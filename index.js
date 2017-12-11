@@ -1,4 +1,3 @@
-var events = require('event');
 var emitter = require('emitter');
 var k = require('k')(window);
 
@@ -28,7 +27,7 @@ function onoff(selectors) {
     if (!check('closing', e)) {
       return self;
     }
-    events.unbind(document, 'click', close);
+    document.removeEventListener('click', close);
     k.unbind();
     cl.add(my.className);
     return self;
@@ -43,7 +42,7 @@ function onoff(selectors) {
       return self;
     }
     cl.remove(my.className);
-    events.bind(document, 'click', close);
+    document.addEventListener('click', close);
     k.bind('esc', close);
     return self;
   }
@@ -56,12 +55,12 @@ function onoff(selectors) {
 
   my.el = document.querySelector(selectors.popup);
   if (selectors.trigger) {
-    events.bind(document.querySelector(selectors.trigger), 'click', opening);
+    document.querySelector(selectors.trigger).addEventListener('click', opening);
   }
   if (selectors.event) {
-    events.bind(window, selectors.event, opening);
+    window.addEventListener(selectors.event, opening);
   }
-  events.bind(my.el.querySelector('.close'), 'click', close);
+  my.el.querySelector('.close').addEventListener('click', close);
 
   self.open = open;
   self.close = close;

@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "component-emitter": "^1.1.1",
-    "component-event": "~0",
     "yields-k": "~0"
   },
   "browser": {
@@ -25,5 +24,8 @@
   ],
   "author": "Damian Krzeminski <pirxpilot@furkot.com>",
   "license": "MIT",
-  "homepage": "https://github.com/pirxpilot/class-on-off"
+  "homepage": "https://github.com/pirxpilot/class-on-off",
+  "files": [
+    "index.js"
+  ]
 }
