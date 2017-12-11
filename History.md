@@ -1,4 +1,10 @@
 
+1.0.0 / 2017-12-10
+==================
+
+ * stop using component-event, component-query, component-classes - if needed use polyfills for old browser
+ * fix make failure on repeated builds
+
 0.3.2 / 2017-02-22
 ==================
 
