@@ -1,5 +1,5 @@
 build: node_modules index.js
-	mkdir build
+	mkdir -p build
 	browserify --require ./index.js:on-off --outfile build/build.js
 
 node_modules: package.json
