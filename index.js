@@ -1,5 +1,4 @@
 var events = require('event');
-var classes = require('classes');
 var query = require('query');
 var emitter = require('emitter');
 var k = require('k')(window);
@@ -22,8 +21,8 @@ function onoff(selectors) {
   }
 
   function close(e) {
-    var cl = classes(my.el);
-    if (cl.has(my.className)) {
+    var cl = my.el.classList;
+    if (cl.contains(my.className)) {
       // alredy closed
       return;
     }
@@ -37,8 +36,8 @@ function onoff(selectors) {
   }
 
   function open(e) {
-    var cl = classes(my.el);
-    if (!cl.has(my.className)) {
+    var cl = my.el.classList;
+    if (!cl.contains(my.className)) {
       return;
     }
     if (!check('opening', e)) {
