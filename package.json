@@ -11,13 +11,13 @@
     "url": "https://github.com/pirxpilot/class-on-off.git"
   },
   "dependencies": {
-    "component-emitter": "^1.1.1",
-    "yields-k": "~0"
+    "@pirxpilot/k": "~1",
+    "component-emitter": "^1.1.1"
   },
   "browser": {
     "emitter": "component-emitter",
     "event": "component-event",
-    "k": "yields-k"
+    "k": "@pirxpilot/k"
   },
   "keywords": [
     "browser"
