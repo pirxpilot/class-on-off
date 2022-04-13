@@ -1,5 +1,5 @@
-var emitter = require('emitter');
-var k = require('k')(window);
+var emitter = require('component-emitter');
+var k = require('@pirxpilot/k')(window);
 
 module.exports = onoff;
 
